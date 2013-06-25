@@ -45,10 +45,9 @@ Clone Spark from GitHub to some local directory (``$HOME/local/src`` within this
     $ cd ~/local/src
     $ git clone https://github.com/mesos/spark/
 
-Setup Spark related environment variables in ``$HOME/.profile``::
+Setup Spark related environment variable in ``$HOME/.profile``::
 
-    export SPARK_HOME=$HOME/local/src/spark
-    export SPARK_EXAMPLES_JAR=$SPARK_HOME/examples/target/scala-2.9.3/spark-examples_2.9.3-0.7.2.jar
+    export SPARK_EXAMPLES_JAR=$HOME/local/src/spark/examples/target/scala-2.9.3/spark-examples_2.9.3-0.7.2.jar
 
 .. note:: The ``$SPARK_EXAMPLES_JAR`` environment variable
 
