@@ -83,15 +83,16 @@ Run ``git tag`` to list all the tags and find out the release you need, for exam
 Compiling
 ---------
 
-Spark can be conveniently built with ``sbt``.  Although Spark comes with a copy of ``sbt``, it's highly recommended to have a separate installation of ``sbt`` (follow instructions here__).
+Spark can be conveniently built with ``sbt``.  Although Spark comes with its own copy, it's highly recommended to have a separate installation of ``sbt`` (follow instructions here__).
 
 __ http://www.scala-sbt.org/release/docs/Getting-Started/Setup.html
 
 Now comes the nasty things for us pathetic Chinese developers: fighting with GFW.  Whiling running, ``sbt`` will download everything needed to build Spark from remote repositories, some of which are blocked by the who you know.
 
-If you've got a VPN, then everything's much simpler, just run ``sbt package`` and wait.  Otherwise, find your self a proxy, then follow `this note`__ to setup ``proxychains`` to proxy ``sbt``.  When everything is done, run::
+If you've got a VPN, then everything's much simpler, just run ``./sbt/sbt package`` under Spark source directory and wait.  Otherwise, find your self a proxy, then follow `this note`__ to setup ``proxychains`` to proxy ``sbt``.  When everything is done, run::
 
-    $ proxychains sbt package
+    $ cd ~/local/src/spark
+    $ proxychains ./sbt/sbt package
 
 __ proxychains.html
 
@@ -104,3 +105,9 @@ Run the ``SparkPi`` example::
 
     $ cd ~/local/src/spark
     $ ./run spark.examples.SparkPi local
+
+At the end of dozens of log lines, you should see an approximate value of `\pi`::
+
+    ...
+    13/06/25 16:34:15 INFO spark.SparkContext: Job finished: reduce at SparkPi.scala:22, took 0.190168437 s
+    Pi is roughly 3.13762
