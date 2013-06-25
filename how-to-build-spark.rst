@@ -58,7 +58,7 @@ Checkout the proper version (optional)
 
 Run ``git tag`` to list all the tags and find out the release you need, for example, ``v0.7.2``, then check it out::
 
-    $ cd $SPARK_HOME
+    $ cd ~/local/src/spark
     $ git tag
     0.3-scala-2.8
     0.3-scala-2.9
@@ -102,5 +102,5 @@ Run the examples
 
 Run the ``SparkPi`` example::
 
-    $ cd $SPARK_HOME
+    $ cd ~/local/src/spark
     $ ./run spark.examples.SparkPi local
