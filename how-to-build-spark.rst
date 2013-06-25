@@ -104,4 +104,4 @@ Run the examples
 Run the ``SparkPi`` example::
 
     $ cd $SPARK_HOME
-    $ ./run spark.examples.SparkPi
+    $ ./run spark.examples.SparkPi local
