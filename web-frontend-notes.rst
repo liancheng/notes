@@ -36,7 +36,7 @@ From `this page`__:
 
     Another good tip is that if you have this situation:
 
-    .. code:: html
+    .. code-block:: html
 
         <div id="outer">
           Outer
@@ -49,7 +49,7 @@ From `this page`__:
 
     it won't really work. Or rather it'll work on (iirc) Firefox but not on IE (any version). So if you want to do something like this, you need to use a containing element.
 
-    .. code:: css
+    .. code-block:: css
 
         <div id="outer">
           Outer

@@ -10,7 +10,7 @@ Enable ``readline`` in REPL
 
 Add these lines to ``~/.racketrc``:
 
-.. code:: scheme
+.. code-block:: scheme
 
     (require readline)
     (require readline/rep-start)
@@ -23,7 +23,7 @@ Enable ``readline`` in REPL
 
 Add these lines to ``~/.guile``:
 
-.. code:: scheme
+.. code-block:: scheme
 
     (use-modules (ice-9 readline))
     (activate readline)
