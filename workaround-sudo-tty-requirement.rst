@@ -17,4 +17,7 @@ The purpose of this design is to `prevent remote users from exposing the root pa
 
     Defaults    requiretty
 
+Check `this page`__ for details.
+
 __ http://www.cyberciti.biz/faq/linux-unix-bsd-sudo-sorry-you-must-haveattytorun/
+__ http://maymay.net/blog/2010/03/17/how-to-work-around-sorry-you-must-have-a-tty-to-run-sudo-without-sacrificing-security/
