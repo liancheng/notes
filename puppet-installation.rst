@@ -83,9 +83,9 @@ Post configuration
 Configuration files
 -------------------
 
-The ``/etc/puppet/puppet.conf`` file is used by both the master (``puppetmaster``) and the agent (``puppet``).  Configurations that are common to server and client nodes can be put into the ``[main]`` section.  Server specific configurations should be put into the ``[master]`` section, and client configurations should be put into the ``[agent]`` section.  Configurations in the latter two sections override those in the ``[main]`` section.
+The ``/etc/puppet/puppet.conf`` file is used by both the master service (``puppetmaster``) and the agent service (``puppet``).  Configurations common to master and agent nodes can be put into the ``[main]`` section.  Master specific configurations should be put into the ``[master]`` section, while agent specific configurations should be put into the ``[agent]`` section.  Contents in the latter two sections may override those in the ``[main]`` section.
 
-On master, edit configuration file ``/etc/puppet/puppet.conf``::
+On master node, edit configuration file ``/etc/puppet/puppet.conf``::
 
     [main]
         server = puppet
@@ -106,12 +106,12 @@ On ``vm-slave-1``, ``/etc/puppet/puppet.conf`` looks like this::
         pluginsync = true
         certname = vm-slave-1       # same to the host name of this node
 
-Configuration to ``vm-slave-2`` is similar to ``vm-slave-1``.
+Configuration on ``vm-slave-2`` is similar to ``vm-slave-1``.
 
 Setup ``puppet`` user and group
 -------------------------------
 
-Just use puppet to do the work::
+Since the puppet command line tools has already been installed, we may use it to simplify the work::
 
     $ sudo puppet resource group puppet ensure=present
     $ sudo puppet resource user puppet ensure=present gid=puppet shell='/sbin/nologin'
@@ -150,7 +150,7 @@ Or with ``service``::
 ``Puppet`` on all nodes
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Setup startup script for ``puppet``, run the following commands on the **all** nodes::
+Setup startup script for ``puppet``, run the following commands on **all** nodes::
 
     $ cd ~/local/src/puppet-3.2.2
     $ sudo cp ext/redhat/client.init /etc/init.d/puppet
