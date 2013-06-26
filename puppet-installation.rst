@@ -43,13 +43,18 @@ All 3 nodes can access each other (and themselves) via SSH with pubkeys.
 Facter/Puppet Installation
 ==========================
 
+Unfortunately, the official Yum repository provided by PuppetLabs seems broken (lots of 403 errors), so I have to resort to tarball installation (which is marked as "**Not Recommened**" in the `official documentation`__).
+
+__ http://docs.puppetlabs.com/guides/installation.html
+
 Dependencies
 ------------
 
 Install the following dependencies first::
 
-    $ sudo yum install ruby ruby-devel rubygems mysql-server
-    $ sudo gem install mysql
+    $ sudo yum install ruby ruby-devel rubygems
+    $ sudo yum install mysql-server     # optional, for Puppet Dashboard only
+    $ sudo gem install mysql            # optional, for Puppet Dashboard only
 
 Install Facter and Puppet
 -------------------------
