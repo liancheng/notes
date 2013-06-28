@@ -157,6 +157,14 @@ Setup startup script for ``puppet``, run the following commands on **all** nodes
     $ sudo chown root:root /etc/init.d/puppet
     $ sudo chmod +x /etc/init.d/puppet
 
+The ``pidfile`` variable on the 18 line of ``/etc/init.d/puppet`` is wrong::
+
+    pidfile=${PIDFILE-/var/run/puppet/agent.pid}
+
+This causes ``sudo service puppet start`` fail.  Modify it to::
+
+    pidfile=${PIDFILE-/var/lib/puppet/run/agent.pid}
+
 Start ``puppet`` with puppet::
 
     $ sudo puppet resource service puppet ensure=running
@@ -168,13 +176,7 @@ Or with ``service``::
 Crontab
 ~~~~~~~
 
-.. warning::
-
-    I'm not very sure what does the following crontab entry mean...  Just copied from here__.
-
-    __ http://docs.puppetlabs.com/guides/installation.html#start-and-enable-the-puppet-services
-
-In an agent/master deployment, you may wish to run puppet agent with cron rather than its init script; this can sometimes perform better and use less memory. You can create this cron job with Puppet::
+In an agent/master deployment, instead of running ``puppet`` as a backgroud daemon, you may wish to run puppet agent with cron rather than its init script; this can sometimes perform better and use less memory. You can create this cron job with Puppet::
 
     $ sudo puppet resource cron puppet-agent ensure=present user=root minute=30 command='/usr/bin/puppet agent --onetime --no-daemonize --splay'
 
