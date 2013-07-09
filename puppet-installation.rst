@@ -5,6 +5,12 @@
 Puppet installation
 ###################
 
+.. warning:: This note is obsoleted
+
+    Please refer to `this note`__ for recommended step by step installation instructions.
+
+    __ install-puppet-on-centos-vbox-vm.html
+
 http://docs.puppetlabs.com/guides/installation.html#start-and-enable-the-puppet-services
 
 Cluster assumption in this note

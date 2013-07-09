@@ -13,7 +13,11 @@ You'll get this error message::
 
     sudo: sorry, you must have a tty to run sudo
 
-The purpose of this design is to `prevent remote users from exposing the root password over SSH`__.  To disable this requirement, run ``sudo visudo`` and comment out this line::
+The purpose of this design is to `prevent remote users from exposing the root password over SSH`__.  To run ``sudo`` under a pseudo TTY::
+
+    $ ssh -t user@host sudo ls
+
+To disable this requirement, run ``sudo visudo`` and comment out this line::
 
     Defaults    requiretty
 

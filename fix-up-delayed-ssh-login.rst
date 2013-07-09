@@ -23,3 +23,5 @@ to
 Then restart ``sshd``::
 
     sudo service sshd restart
+
+Also, check this page for the reverse DNS issue http://serverfault.com/questions/289158/10-second-ssh-delay-prior-to-successful-login

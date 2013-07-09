@@ -1,9 +1,9 @@
 .. meta::
     :tags: puppet, ubuntu, plymouth-ready, upstart
 
-##############################################
-Puppet workaround with Ubuntu `plymouth-ready`
-##############################################
+################################################
+Puppet workaround with Ubuntu ``plymouth-ready``
+################################################
 
 Environment assumption:
 
