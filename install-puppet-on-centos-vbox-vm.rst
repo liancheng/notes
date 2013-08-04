@@ -167,6 +167,22 @@ __ http://virtualboximages.com
         [dev@vm-master ~]$ sudo yum install -y puppet-master
         [dev@vm-master ~]$ sudo service puppetmaster start
 
+*   Enable ``puppet kick`` subcommand.  Perform actions below on all agent nodes:
+
+    *   Add ACL for ``/run``.  Edit ``/etc/puppet/auth.conf``, add these lines::
+
+            path /run
+            auth any
+            allow *
+
+    *   Add an empty ``namespaceauth.conf`` file under ``/etc/puppet``::
+
+            $ sudo touch /etc/puppet/namespaceauth.conf
+
+    *   Restart ``puppet``::
+
+            $ sudo /etc/init.d/puppet restart
+
 ----
 
 http://docs.puppetlabs.com/guides/installation.html#enterprise-linux-and-derivatives
