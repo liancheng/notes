@@ -31,6 +31,8 @@ todo_include_todos = True
 
 if 'MATHJAX_ROOT' in os.environ:
     mathjax_path = os.environ['MATHJAX_ROOT'] + '/MathJax.js?config=TeX-AMS_HTML'
+else:
+    mathjax_path = 'http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTML'
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
