@@ -1,3 +1,6 @@
+.. meta::
+    :tags: programming-language, actor, gc, monad, location-transparency, message-passing
+
 ##############
 理想的编程语言
 ##############
@@ -12,7 +15,7 @@
 
     .. note::
 
-        Actor的创建和消息收发仍然是副作用，这点与纯函数式的要求是相背的。能否利用monad将actor的创建及消息收发抽象出来，还有待考证。
+        Actor的创建和消息传递仍然是副作用，这点与纯函数式的要求是相背的。能否利用monad将actor的创建及消息传递抽象出来，还有待考证。
 
 #.  位置透明
 #.  默认求值顺序为strict，但支持lazy语义

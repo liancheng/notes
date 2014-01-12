@@ -24,3 +24,15 @@ Configurations
 *   ``spark.arthur.enabled``: Boolean, default to ``true``
 *   ``spark.arthur.checksum``: Boolean, default to ``true``
 *   ``SPARK_ARTHUR_LOGPATH``: String
+
+``EventLogReader``
+==================
+
+``tasks`` are extracted from ``events``
+
+Questions
+=========
+
+*   What does ``RDD.clearDependencies`` do?
+
+    Guess: dependencies should be cleared after checkpointing
